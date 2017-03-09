@@ -12,3 +12,5 @@ Pour installer le conteneur :
 4 - Executer docker-compose.exe up -d
 
 5 - Executer docker-compose exec php bash
+
+6 - Exectuer symfony new nomduprojet et enjoy !
