@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+    db:
+        image: mysql
+        volumes:
+            - "./.data/db:/var/lib/mysql"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: symfony
+            MYSQL_USER: symfony
+            MYSQL_PASSWORD: password
+    php:
+        build: php7-fpm
+        ports:
+            - 9000:9000
+            - 80:80
+        volumes:
+            - ${SYMFONY_APP_PATH}:/var/www/html
+            - ./logs/symfony:/var/www/symfony/app/logs
+            - ./logs/apache/:/var/log/apache
+    elk:
+        image: willdurand/elk
+        ports:
+            - 81:80
+        volumes:
+            - ./elk/logstash:/etc/logstash
+            - ./elk/logstash/patterns:/opt/logstash/patterns
+        volumes_from:
+            - php
+
