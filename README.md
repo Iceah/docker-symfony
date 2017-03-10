@@ -21,3 +21,19 @@ Modifier vos fichiers Symfony dans le dossier html de votre ordinateur, et parti
 Pour afficher votre site sous Symfony : 192.168.99.100/nomdevotreprojet/web/app_dev.php
 
 
+Commandes utiles :
+
+# Voir la consommation CPU
+$ docker stats $(docker inspect -f "{{ .Name }}" $(docker ps -q))
+
+# Voir tout les conteneurs actifs
+$ docker ps -a
+
+# Arrêter tout les conteneurs
+$ docker stop $(docker ps -aq)
+
+# Effacer tout les conteneurs
+$ docker rm $(docker ps -aq)
+
+# Effacer toutes les images
+$ docker rmi $(docker images -q)
