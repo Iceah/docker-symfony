@@ -4,7 +4,12 @@ FROM php:7.0-fpm
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
-	apache2
+    apache2 \
+    php7.0-xml \
+    libapache2-\ 
+    mod-php \
+    php-mcrypt \
+    php-mysql
 	
 EXPOSE 80
 EXPOSE 443
