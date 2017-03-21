@@ -5,7 +5,6 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     apache2 \
-    mariadb-server
 EXPOSE 80
 EXPOSE 443
 	
