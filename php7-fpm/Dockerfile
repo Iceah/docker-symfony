@@ -4,7 +4,7 @@ FROM php:7.0-fpm
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
-    apache2 \
+    apache2
 EXPOSE 80
 EXPOSE 443
 	
